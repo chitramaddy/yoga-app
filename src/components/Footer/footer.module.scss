@@ -1,0 +1,16 @@
+@use "../../styles/theme";
+
+.footer {
+  margin-top: auto;
+  background-color: theme.$secondary-dark;
+  color: theme.$primary;
+  padding: 36px 0;
+
+  &-wrapper {
+    @include theme.wrap-section;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
