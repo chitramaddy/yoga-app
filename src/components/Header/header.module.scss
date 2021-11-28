@@ -14,13 +14,14 @@ $headerSize: 150px;
   &-wrapper {
     @include theme.wrap-section;
     display: flex;
-    align-items: stretch;
+    align-items: center;
   }
 
   &-logo {
     font-family: theme.$logo-font;
     color: theme.$primary;
     font-size: clamp(3rem, 5.2vw, 8rem);
+    line-height: normal;
     transition: all 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 
     &:hover,
@@ -70,7 +71,7 @@ $headerSize: 150px;
 
   @media screen and (min-width: 768px) {
     &-logo {
-      flex: 0 25%;
+      flex: 0 40%;
     }
 
     &-nav {
@@ -87,7 +88,7 @@ $headerSize: 150px;
     //   justify-content: space-between;
     // }
     &-logo {
-      flex: 0 25%;
+      flex: 0 40%;
     }
 
     &-nav {

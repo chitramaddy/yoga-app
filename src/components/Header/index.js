@@ -9,12 +9,8 @@ const navItems = [
     label: "ABOUT",
   },
   {
-    path: "/courses",
-    label: "COURSES",
-  },
-  {
-    path: "/Jobs",
-    label: "JOBS",
+    path: "/articles",
+    label: "ARTICLES",
   },
 ];
 
@@ -24,7 +20,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles["header-wrapper"]}>
         <Link href="/">
-          <a className={styles["header-logo"]}>UP</a>
+          <a className={styles["header-logo"]}>NEWS NOW</a>
         </Link>
 
         <nav className={styles["header-nav"]}>
