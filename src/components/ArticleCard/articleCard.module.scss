@@ -1,0 +1,41 @@
+@use "../../styles/theme";
+
+.articles {
+  &-wrapper-grid {
+    @include theme.wrap-section;
+    padding: 40px 0;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    grid-auto-rows: minmax(200px, 1fr);
+
+    @include theme.md() {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+    }
+  }
+
+  &-grid-item {
+    margin: 5px;
+    border: dotted 1px grey;
+  }
+
+  &-image-wrapper {
+    display: inline;
+
+    &-resize {
+      max-width: 350px;
+      max-height: 250px;
+      &:hover {
+        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+      }
+    }
+  }
+
+  &-item-details {
+    margin: 0 5px;
+    // display: flex;
+    font-style: italic;
+  }
+}

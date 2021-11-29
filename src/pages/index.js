@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ArticleCard from "../components/ArticleCard";
 import getNews from "../utils/HeadLines";
 
 const Home = ({ topHeadlines }) => {
@@ -11,9 +12,9 @@ const Home = ({ topHeadlines }) => {
       </Head>
       <div className="flex-wrapper">
         <Header />
-        {topHeadlines.articles.map((article) => (
-          <pre key={`${article.title}`}>{JSON.stringify(article, null, 2)}</pre>
-        ))}
+        {/* {topHeadlines.articles.map((article) => ( 
+         <pre key={`${article.title}`}>{JSON.stringify(article, null, 2)}</pre>))}*/}
+        <ArticleCard articles={topHeadlines.articles} />
 
         <Footer />
       </div>
