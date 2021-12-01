@@ -6,7 +6,7 @@ import QuoteCard from "../components/QuoteCard";
 import getNews from "../utils/HeadLines";
 import { getPoses } from "../utils/poses";
 import { getQuotes } from "../utils/quotes";
-import NewsletterBanner from "../components/newsletterBanner";
+import NewsletterBanner from "../components/NewsLetterBanner";
 
 const Home = ({ topHeadlines, poses, quotes }) => {
   return (
