@@ -1,0 +1,31 @@
+@use "../../styles/theme";
+
+.poseBanner {
+  position: relative;
+  min-height: 650px;
+
+  &-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  &-item-details {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    color: theme.$primary;
+  }
+
+  &-item-details-inner {
+    @include theme.wrap-section;
+    padding: 24px 0;
+  }
+
+  &-title {
+    max-width: 100ch;
+  }
+}

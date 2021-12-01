@@ -1,0 +1,59 @@
+@use "../../styles/theme";
+
+$headerSize: 150px;
+
+.header {
+  background-color: theme.$background-color;
+  height: $headerSize;
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &-wrapper {
+    @include theme.wrap-section;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-logo {
+    font-family: theme.$logo-font;
+    color: theme.$primary;
+    font-size: clamp(3rem, 5.2vw, 8rem);
+    line-height: normal;
+    transition: all 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: theme.$highlight;
+      color: theme.$highlight;
+    }
+  }
+
+  &-link {
+    padding: 12px;
+    font-size: theme.$header3;
+    color: theme.$primary;
+    transition: all 0.5s cubic-bezier(1, 0.1, 0.1, 1);
+    cursor: pointer;
+    background-image: linear-gradient(
+      to bottom,
+      theme.$primary 0%,
+      theme.$primary 100%
+    );
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 0 100%;
+    &:hover,
+    &:focus,
+    &:active {
+      background-size: 100% 100%;
+      color: theme.$secondary-dark;
+    }
+  }
+}
