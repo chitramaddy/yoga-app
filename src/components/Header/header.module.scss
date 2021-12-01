@@ -3,7 +3,7 @@
 $headerSize: 150px;
 
 .header {
-  background-color: theme.$color-500;
+  background-color: theme.$background-color;
   height: $headerSize;
   position: sticky;
   z-index: 9999;

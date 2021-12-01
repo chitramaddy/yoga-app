@@ -2,9 +2,11 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ArticleCard from "../components/ArticleCard";
+import QuoteCard from "../components/QuoteCard";
 import getNews from "../utils/HeadLines";
 import { getPoses } from "../utils/poses";
 import { getQuotes } from "../utils/quotes";
+import NewsletterBanner from "../components/newsletterBanner";
 
 const Home = ({ topHeadlines, poses, quotes }) => {
   return (
@@ -15,10 +17,8 @@ const Home = ({ topHeadlines, poses, quotes }) => {
       <div className="flex-wrapper">
         <Header />
         <ArticleCard poses={poses} />
-        {/* <ArticleCard quotes={quotes} /> */}
-
-        <pre>{JSON.stringify(quotes, null, 2)}</pre>
-
+        <NewsletterBanner />
+        <QuoteCard quotes={quotes} />
         <Footer />
       </div>
     </>
@@ -31,7 +31,6 @@ export const getStaticProps = async () => {
   const topHeadlines = await getNews();
   const poses = await getPoses();
   const quotes = await getQuotes();
-  console.log(quotes);
   return {
     props: {
       topHeadlines,

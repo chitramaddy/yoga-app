@@ -1,0 +1,55 @@
+@use "../../styles/theme";
+
+.banner {
+  background-color: theme.$secondary-dark;
+  color: theme.$primary;
+
+  &-wrapper {
+    @include theme.wrap-section;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  &-heading {
+    color: theme.$highlight;
+    font-family: theme.$text-font;
+    font-size: theme.$header2;
+    font-weight: 600;
+  }
+
+  &-subtext {
+    color: theme.$primary;
+    font-family: theme.$header-font;
+    font-size: theme.$header4;
+    font-weight: 100;
+  }
+
+  &-form {
+    margin: 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-form-input {
+    font-family: theme.$text-font;
+    font-size: 20px;
+    padding: 18px;
+    border: none;
+    flex: 3 500px;
+  }
+
+  &-form-btn {
+    flex: 1 125px;
+    cursor: pointer;
+    background: theme.$color-300;
+    border: none;
+    color: theme.$secondary-dark;
+    font-family: theme.$header-font;
+    font-size: 18px;
+    padding: 16px 0;
+    text-align: center;
+    &:hover {
+      background: theme.$highlight;
+    }
+  }
+}
