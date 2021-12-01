@@ -1,6 +1,13 @@
 @use "../../styles/theme";
 
 .articles {
+  background-color: theme.$color-400;
+  &-title {
+    display: flex;
+    padding: 30px;
+    font-family: theme.$header-font;
+    justify-content: center;
+  }
   &-wrapper-grid {
     @include theme.wrap-section;
     padding: 40px 0;
@@ -10,36 +17,66 @@
     gap: 20px;
     grid-auto-rows: minmax(200px, 1fr);
 
+    :nth-child(1) {
+      grid-column: span 3;
+      grid-row: span 3;
+    }
+
     :nth-child(5n) {
+      grid-row: span 2;
+    }
+
+    :nth-last-child(2) {
       grid-column: span 2;
     }
 
     :nth-last-child(1) {
-      grid-column: span 3;
+      grid-row: span 2;
     }
 
     @include theme.md() {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
+      // grid-template-rows: auto;
     }
   }
 
   &-grid-item {
+    position: relative;
+    overflow: hidden;
     margin: 5px;
-    border: dotted 1px grey;
-  }
+    border: dotted 1px grayscale($color: #00000062);
 
-  &-image-wrapper {
-    display: block;
-
-    &-resize {
-      max-width: 350px;
-      max-height: auto;
+    &:hover {
+      .articles-image-wrapper,
+      .articles-item-details {
+        filter: none;
+        transform: scale(1.1);
+        display: initial;
+      }
     }
   }
 
+  &-image-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    min-height: 200 px;
+    filter: blur(1px);
+    transition: all 0.5s ease-out;
+  }
+
   &-item-details {
+    display: none;
+    align-items: flex-end;
+    position: absolute;
+    // visibility: hidden;
     margin: 0 5px;
     font-style: italic;
+    font-weight: 200;
+    transition: all 0.5s ease-out;
+
+    &-inner {
+      padding: 15px;
+    }
   }
 }

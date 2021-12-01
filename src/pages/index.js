@@ -14,10 +14,7 @@ const Home = ({ topHeadlines, poses, quotes }) => {
       </Head>
       <div className="flex-wrapper">
         <Header />
-        {/* {topHeadlines.articles.map((article) => ( 
-         <pre key={`${article.title}`}>{JSON.stringify(article, null, 2)}</pre>))}*/}
-        <pre>{JSON.stringify(poses, null, 2)}</pre>
-        {/* <ArticleCard articles={topHeadlines.articles} /> */}
+        <ArticleCard poses={poses} />
         {/* <ArticleCard quotes={quotes} /> */}
 
         <pre>{JSON.stringify(quotes, null, 2)}</pre>

@@ -2,73 +2,36 @@ import Link from "next/Link";
 import Image from "next/image";
 import styles from "./articleCard.module.scss";
 
-const ArticleCard = ({ articles, poses }) => {
+const ArticleCard = ({ poses }) => {
   return (
     <section className={styles.articles}>
-      <div className={styles["articles-wrapper-grid"]}>
-        {articles.map(
-          ({ author, title, description, url, urlToImage, content }) =>
-            urlToImage &&
-            urlToImage !== "null" && (
-              <article className={styles["articles-grid-item"]} key={title}>
-                <Link href={`${url}`}>
-                  <a>
-                    <div className={styles["articles-image-wrapper"]}>
-                      <img
-                        className={styles["articles-image-wrapper-resize"]}
-                        src={urlToImage}
-                        alt={title}
-                        layout="fill"
-                        objectfit="cover"
-                        objectposition="center"
-                      />
-                    </div>
-                    <div className={styles["articles-item-details"]}>
-                      <div className={styles["articles-item-details-inner"]}>
-                        <h5>{title}</h5>
-                        <p>{author}</p>
-                        <p>{description}</p>
-                        <p>{content}</p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-              </article>
-            )
-        )}
+      <div className={styles["articles-title"]}>
+        <h2>Some poses for a great start</h2>
       </div>
-
       <div className={styles["articles-wrapper-grid"]}>
-        {poses.map(
-          ({ author, title, description, url, urlToImage, content }) =>
-            urlToImage &&
-            urlToImage !== "null" && (
-              <article className={styles["articles-grid-item"]} key={title}>
-                <Link href={`${url}`}>
-                  <a>
-                    <div className={styles["articles-image-wrapper"]}>
-                      <img
-                        className={styles["articles-image-wrapper-resize"]}
-                        src={urlToImage}
-                        alt={title}
-                        layout="fill"
-                        objectfit="cover"
-                        objectposition="center"
-                      />
-                    </div>
-                    <div className={styles["articles-item-details"]}>
-                      <div className={styles["articles-item-details-inner"]}>
-                        <h5>{title}</h5>
-                        <p>{author}</p>
-                        <p>{description}</p>
-                        <p>{content}</p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-              </article>
-            )
-        )}
+        {poses.map(({ id, poseName, slug, steps, poseImage }) => (
+          <article className={styles["articles-grid-item"]} key={id}>
+            <Link href={`/${slug}`}>
+              <a>
+                <div className={styles["articles-image-wrapper"]}>
+                  <Image
+                    className={styles["articles-image"]}
+                    src={poseImage.url}
+                    alt={poseName}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
+                <div className={styles["articles-item-details"]}>
+                  <div className={styles["articles-item-details-inner"]}>
+                    <h4>{poseName}</h4>
+                  </div>
+                </div>
+              </a>
+            </Link>
+          </article>
+        ))}
       </div>
     </section>
   );
