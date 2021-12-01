@@ -12,7 +12,7 @@ const Home = ({ topHeadlines, poses, quotes }) => {
   return (
     <>
       <Head>
-        <title>Trending News</title>
+        <title>Yogi</title>
       </Head>
       <div className="flex-wrapper">
         <Header />
