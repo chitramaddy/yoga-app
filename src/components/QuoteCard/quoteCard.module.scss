@@ -1,0 +1,37 @@
+@use "../../styles/theme";
+
+.quotes {
+  background-color: theme.$color-400;
+
+  &-wrapper-grid {
+    @include theme.wrap-section;
+    padding: 40px 0;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    grid-auto-rows: minmax(200px, 1fr);
+
+    @include theme.md() {
+      grid-template-columns: repeat(3, 1fr);
+      // grid-template-rows: auto;
+    }
+  }
+
+  &-grid-item {
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+    border: dotted 1px grayscale($color: #00000062);
+  }
+
+  &-item-details {
+    margin: 0 5px;
+    font-style: italic;
+    font-weight: 100;
+
+    &-inner {
+      padding: 15px;
+    }
+  }
+}

@@ -3,18 +3,21 @@
 $headerSize: 150px;
 
 .header {
-  background-color: theme.$secondary-dark;
+  background-color: theme.$background-color;
   height: $headerSize;
   position: sticky;
   z-index: 9999;
   top: 0;
-  display: flex;
+  justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 
   &-wrapper {
     @include theme.wrap-section;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   &-logo {
@@ -32,24 +35,9 @@ $headerSize: 150px;
     }
   }
 
-  &-nav {
-    @include theme.wrap-section;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    color: theme.$primary;
-    max-height: calc(100vh - #{$headerSize});
-    overflow: auto;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
   &-link {
     padding: 12px;
-    font-size: theme.$header4;
+    font-size: theme.$header3;
     color: theme.$primary;
     transition: all 0.5s cubic-bezier(1, 0.1, 0.1, 1);
     cursor: pointer;
@@ -66,39 +54,6 @@ $headerSize: 150px;
     &:active {
       background-size: 100% 100%;
       color: theme.$secondary-dark;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    &-logo {
-      flex: 0 40%;
-    }
-
-    &-nav {
-      flex: 0 auto;
-      flex-direction: row;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    // .header {
-    //   display: flex;
-    //   min-height: 100px;
-    //   flex-direction: column;
-    //   justify-content: space-between;
-    // }
-    &-logo {
-      flex: 0 40%;
-    }
-
-    &-nav {
-      flex: 1 auto;
-      flex-direction: column;
-      margin: auto;
-    }
-
-    &-link {
-      padding: 0px;
     }
   }
 }
